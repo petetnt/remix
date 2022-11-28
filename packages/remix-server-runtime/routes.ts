@@ -1,4 +1,3 @@
-// TODO: RRR - Change import to @remix-run/router
 import type {
   AgnosticDataRouteObject,
   ActionFunctionArgs,
