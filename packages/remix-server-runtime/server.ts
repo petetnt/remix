@@ -101,7 +101,7 @@ async function handleDataRequestRR(
   request: Request
 ) {
   try {
-    let response = await staticHandler.queryRoute(request, routeId);
+    let response = await staticHandler.queryRoute(request, { routeId });
 
     if (isRedirectResponse(response)) {
       // We don't have any way to prevent a fetch request from following
@@ -302,7 +302,7 @@ async function handleResourceRequestRR(
     // Note we keep the routeId here to align with the Remix handling of
     // resource routes which doesn't take ?index into account and just takes
     // the leaf match
-    let response = await staticHandler.queryRoute(request, routeId);
+    let response = await staticHandler.queryRoute(request, { routeId });
     // callRouteLoader/callRouteAction always return responses
     invariant(
       response instanceof Response,
